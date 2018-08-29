@@ -1,0 +1,214 @@
+@import '../../assets/sass/vars';
+@import '../../assets/sass/mixins';
+.header {
+  border-bottom: 1px solid #ececec;
+  height: 88px;
+  background-color: #fff;
+  position: relative;
+}
+.header__top {
+  font-weight: 700;
+  font-size: 17px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  @include tablets {
+    justify-content: center;
+  }
+}
+.header__bottom {
+  font-weight: 700;
+  font-size: 15px;
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 100%;
+  width: 1050px;
+  height: 40px;
+  z-index: 10;
+  .menu__item {
+    border-right: none;
+  }
+  @include laptop {
+    justify-content: flex-end;
+    width: 668px;
+  }
+}
+.header-box__wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.header__basket {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.header__search {
+  width: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #ececec;
+}
+.menu {
+  flex-basis: 400px;
+  display: flex;
+  justify-content: flex-start;
+  @include laptop {
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+    padding-top: 24px;
+    .menu__item {
+      border-right: none;
+      font-size: 15px;
+    }
+  }
+  @include tablets {
+    display: none;
+  }
+}
+.menu__item {
+  display: flex;
+  align-items: center;
+  padding: 0 34px;
+  border-right: 1px solid #ececec;
+}
+.menu__item:first-child {
+  padding-left: 0;
+}
+.menu__item:last-child {
+  padding-right: 0;
+  border-right: none;
+}
+.header__logo {
+  flex-basis: 200px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.logo {
+  @include tablets {
+    width: 90px;
+  }
+}
+.header-box__wrapper {
+  flex-basis: 400px;
+  @include tablets {
+    display: none;
+  }
+}
+.basket__icon {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.basket__name {
+  margin-left: 40px;
+}
+.basket__curr {
+  margin-left: 10px;
+}
+.delivery {
+  font-weight: 400;
+}
+.icon {
+  opacity: .3;
+}
+.icon:hover {
+  fill: $green-dark;
+  opacity: .8;
+  cursor: pointer;
+}
+.icon-down {
+  fill: $green-dark;
+  opacity: .4;
+}
+.header__basket:hover {
+  .icon {
+    fill: $green-dark;
+    opacity: .8;
+  }
+  opacity: .7;
+  cursor: pointer;
+}
+.header__basket--down {
+  opacity: .3;
+}
+.menu--bottom {
+  @include laptop {
+    display: none;
+  }
+}
+.hamburger {
+  display: none;
+  @include tablets {
+    display: block;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(calc(-50% + 110px));
+  }
+}
+.hamburger .line {
+  width: 20px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #000;
+  display: block;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+}
+
+.hamburger:hover {
+  cursor: pointer
+}
+.hamburger.is-active .line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-active .line:nth-child(1) {
+  -webkit-transform: translateY(8px) rotate(45deg);
+  -moz-transform: translateY(8px) rotate(45deg);
+  -ms-transform: translateY(8px) rotate(45deg);
+  -o-transform: translateY(8px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.is-active .line:nth-child(3) {
+  -webkit-transform: translateY(-8px) rotate(-45deg);
+  -moz-transform: translateY(-8px) rotate(-45deg);
+  -ms-transform: translateY(-8px) rotate(-45deg);
+  -o-transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
+}
+.hamburger__menu {
+  display: none;
+}
+.hamburger__menu.is-active {
+  display: block;
+  z-index: 20;
+  position: absolute;
+  top: 10%;
+  left: 45%;
+  transform: translateX(-50%);
+  width: 220px;
+  background-color: $green-light;
+  color: #fff;
+  padding: 20px;
+  .menu__item {
+    padding: 10px 0;
+    border: none;
+    .basket__name {
+      margin-left: 0;
+    }
+  }
+}
+.header__bottom {
+  @include tablets {
+    display: none;
+  }
+}
